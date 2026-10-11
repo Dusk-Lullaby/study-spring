@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        spring管理bean的第一种方式：基于无参数的构造函数管理bean
+            scope:描述bean的作用域
+                singleton：单例的bean 每次从容器中获取的bean都是同一个bean
+                prototype：多例的bean 每次从容器中获取的bean都不是同一个bean
+                init-method：描述bean生命周期中的初始化bean方法
+                destroy-method：描述bean的生命周期中的销毁bean的方法
+    -->
+    <bean id="userDao" class="com.sonnet.dao.impl.UserDaoImpl" init-method="init" destroy-method="destroy"></bean>
+
+    <!--
+        spring管理bean的第二种方式，基于实例化工厂管理bean
+            factory-bean：引用的是工厂的id
+            factory-method：引用的是工厂bean中获取bean的方法名称
+    -->
+    <bean id="personFactory" class="com.sonnet.factory.PersonFactory"></bean>
+    <bean id="personDao" class="com.sonnet.dao.impl.PersonDaoImpl" factory-bean="personFactory" factory-method="getPerson"></bean>
+
+    <!--
+        spring管理bean的第三种方式，使用静态实例化来管理bean
+    -->
+    <bean id="orderFactory" class="com.sonnet.factory.OrderFactory" factory-method="getOrder"></bean>
+</beans>

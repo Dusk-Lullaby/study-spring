@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        第一种：使用set方法进行注入，使用set方法注入的前提是，被管理的bean必须提供set方法
+            property标签：完成bean的属性的注入
+                name：描述bean的属性名称
+                value：描述bean的属性值（基本数据类型，字符串数据类型）
+                ref：注入的是引用数据类型的值，引用的是另外一个bean的id
+    -->
+    <bean id="car" class="com.sonnet.pojo.Car">
+        <property name="type" value="BMW540"></property>
+        <property name="brand" value="宝马"></property>
+    </bean>
+    <bean id="user" class="com.sonnet.pojo.User">
+        <property name="username" value="eric"></property>
+        <property name="age" value="18"></property>
+        <property name="address" value="USA"></property>
+        <property name="car" ref="car"></property>
+    </bean>
+</beans>

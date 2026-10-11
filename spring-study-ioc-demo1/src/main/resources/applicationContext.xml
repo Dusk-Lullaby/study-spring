@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        在spring环境中管理bean
+        bean标签就是帮助我们管理bean的标签，将bean放在spring的ioc容器中
+            id：bean的名称，在定义的时候可以任意取值，但必须要唯一
+            class：bean所属的权限定名
+    -->
+    <bean id="accountDao" class="com.sonnet.dao.impl.AccountDaoImpl"></bean>
+    <bean id="accountService" class="com.sonnet.service.impl.AccountServiceImpl"></bean>
+</beans>
