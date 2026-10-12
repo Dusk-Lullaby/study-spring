@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        配置数据源
+        property：描述的是连接数据库所需要的用户名 密码 url 驱动类
+    -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/spring_lesson?useSSL=false&amp;serverTimezone=Asia/Shanghai"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="root"></property>
+    </bean>
+
+    <!--
+        管理QueryRunner核心对象
+    -->
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner">
+        <!--将数据源注入到QueryRunner中-->
+        <constructor-arg name="ds" ref="dataSource"></constructor-arg>
+    </bean>
+
+    <!--
+        管理dao
+    -->
+    <bean id="accountDao" class="com.sonnet.dao.impl.AccountDaoImpl">
+        <property name="runner" ref="runner"></property>
+    </bean>
+
+    <!--
+        管理service
+    -->
+    <bean id="accountService" class="com.sonnet.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>
+</beans>

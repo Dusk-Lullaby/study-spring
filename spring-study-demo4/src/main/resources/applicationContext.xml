@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--
+    <bean id="accountDao" class="com.sonnet.dao.impl.AccountDaoImpl"></bean>
+
+    <bean id="accountService" class="com.sonnet.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>
+-->
+
+    <!--
+        context:component-scan标签：定义包扫描的规则，告诉spring要去指定的包下面扫描所属的类
+            base-package属性：描述的是扫描指定的包及其子包下面的所有类
+    -->
+    <context:component-scan base-package="com.sonnet"></context:component-scan>
+</beans>

@@ -20,4 +20,69 @@
         <property name="address" value="USA"></property>
         <property name="car" ref="car"></property>
     </bean>
+
+    <!--
+        spring的依赖注入的第二种方式：使用构造函数注入
+            constructor-arg：完成依赖注入 使用的是带参数的构造函数完成
+                name：属性名称
+                value：属性名称所属的值，必须是基本数据类型和字符串类型的值
+                ref：引用数据类型的值
+    -->
+    <bean id="department" class="com.sonnet.pojo.Department">
+        <constructor-arg name="id" value="1"></constructor-arg>
+        <constructor-arg name="name" value="技术"></constructor-arg>
+        <constructor-arg name="location" value="Beijing"></constructor-arg>
+    </bean>
+    <bean id="emp" class="com.sonnet.pojo.Emp">
+        <constructor-arg name="id" value="1001"></constructor-arg>
+        <constructor-arg name="name" value="eric"></constructor-arg>
+        <constructor-arg name="age" value="18"></constructor-arg>
+        <constructor-arg name="department" ref="department"></constructor-arg>
+    </bean>
+
+    <!--
+        进行复杂数据类型的注入
+    -->
+    <bean id="animal" class="com.sonnet.pojo.Animal">
+        <!--注入数组类型的值-->
+        <property name="strs">
+            <array>
+                <value>str1</value>
+                <value>str2</value>
+                <value>str3</value>
+            </array>
+        </property>
+        <!--注入list类型的值-->
+        <property name="list">
+            <list>
+                <value>list1</value>
+                <value>list2</value>
+                <value>list3</value>
+            </list>
+        </property>
+        <!--注入set类型的值-->
+        <property name="set">
+            <set>
+                <value>s1</value>
+                <value>s2</value>
+                <value>s3</value>
+            </set>
+        </property>
+        <!--注入map类型的值-->
+        <property name="map">
+            <map>
+                <entry key="k1" value="v1"></entry>
+                <entry key="k2" value="v2"></entry>
+                <entry key="k3" value="v3"></entry>
+            </map>
+        </property>
+        <!--注入properties的值-->
+        <property name="pros">
+            <props>
+                <prop key="p1">v1</prop>
+                <prop key="p2">v2</prop>
+                <prop key="p3">v3</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
