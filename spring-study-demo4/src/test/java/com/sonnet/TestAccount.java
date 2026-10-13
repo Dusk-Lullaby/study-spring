@@ -11,9 +11,13 @@ public class TestAccount {
     @Test
     public void test01() {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        AccountService accountService = (AccountService) context.getBean("accountServiceImpl");
-        accountService.addAccount();
-        AccountDao accountDao = (AccountDao) context.getBean("accountDaoImpl");
-        accountDao.addAccount();
+        //AccountService accountService = (AccountService) context.getBean("accountServiceImpl");
+        //accountService.addAccount();
+        //AccountDao accountDao = (AccountDao) context.getBean("accountDaoImpl");
+        //accountDao.addAccount();
+
+        AccountService accountService1 = (AccountService) context.getBean("accountServiceImpl");
+        AccountService accountService2 = (AccountService) context.getBean("accountServiceImpl");
+        System.out.println(accountService2 == accountService1);
     }
 }

@@ -15,6 +15,8 @@
         <module>spring-study-demo3</module>
         <module>spring-study-account</module>
         <module>spring-study-demo4</module>
+        <module>spring-study-account-annotation</module>
+        <module>spring-study-javaconfig</module>
     </modules>
 
     <properties>
