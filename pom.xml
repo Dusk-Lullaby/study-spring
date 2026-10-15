@@ -18,6 +18,7 @@
         <module>spring-study-account-annotation</module>
         <module>spring-study-javaconfig</module>
         <module>spring-study-account-demo2</module>
+        <module>spring-study-proxy</module>
     </modules>
 
     <properties>

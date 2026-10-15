@@ -20,6 +20,12 @@
 
     <!--配置QueerRunner核心对象-->
     <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" >
-        <constructor-arg name="ds" ref="dataSource"></constructor-arg>
+        <!--<constructor-arg name="ds" ref="dataSource"></constructor-arg>-->
     </bean>
+
+    <!--管理代理工厂类-->
+    <bean id="proxyFactory" class="com.sonnet.factory.ProxyFactory"></bean>
+
+    <!--管理代理对象(基于实例化工厂管理bean)-->
+    <bean id="proxy" factory-bean="proxyFactory" factory-method="getAccountService"></bean>
 </beans>
