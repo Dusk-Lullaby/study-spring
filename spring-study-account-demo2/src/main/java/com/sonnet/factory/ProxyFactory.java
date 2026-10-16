@@ -3,6 +3,7 @@ package com.sonnet.factory;
 import com.sonnet.service.AccountService;
 import com.sonnet.utils.TransactionManger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -13,6 +14,7 @@ import java.lang.reflect.Proxy;
  */
 public class ProxyFactory {
 
+    @Qualifier("accountServiceImpl")
     @Autowired
     AccountService accountService;
 

@@ -19,6 +19,9 @@
         <module>spring-study-javaconfig</module>
         <module>spring-study-account-demo2</module>
         <module>spring-study-proxy</module>
+        <module>spring-study-aspectj</module>
+        <module>spring-study-aspectj-annotation</module>
+        <module>spring-study-account-aop</module>
     </modules>
 
     <properties>
