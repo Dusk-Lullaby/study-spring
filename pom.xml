@@ -22,6 +22,7 @@
         <module>spring-study-aspectj</module>
         <module>spring-study-aspectj-annotation</module>
         <module>spring-study-account-aop</module>
+        <module>spring-study-jdbcTemplate</module>
     </modules>
 
     <properties>
