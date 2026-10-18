@@ -23,6 +23,9 @@
         <module>spring-study-aspectj-annotation</module>
         <module>spring-study-account-aop</module>
         <module>spring-study-jdbcTemplate</module>
+        <module>spring-study-transaction-demo1</module>
+        <module>spring-study-transaction-demo2</module>
+        <module>spring-study-spring5-log</module>
     </modules>
 
     <properties>
