@@ -32,6 +32,14 @@ public class Account {
         this.money = money;
     }
 
+    public Account (){}
+
+    public Account(Integer id, String name, Double money) {
+        this.id = id;
+        this.name = name;
+        this.money = money;
+    }
+
     @Override
     public String toString() {
         return "Account{" +

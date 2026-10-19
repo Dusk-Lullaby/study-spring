@@ -34,7 +34,7 @@ public class AccountServiceImpl implements AccountService {
             targetAccount.setMoney(targetAccount.getMoney() + money);
             // 执行金额的修改
             accountDao.updateAccount(sourceAccount);
-            int i = 10 / 0;
+            //int i = 10 / 0;
             accountDao.updateAccount(targetAccount);
         }
     }
